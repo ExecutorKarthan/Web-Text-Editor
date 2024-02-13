@@ -30,7 +30,7 @@ module.exports = () => {
       //Plugin to route the service worker
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
       }),
 
       new WebpackPwaManifest({
@@ -43,7 +43,7 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('./src/images/logo.png'),
+            src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512], 
             destination: path.join('assets', 'icons')
           },
@@ -58,7 +58,7 @@ module.exports = () => {
         //CSS loader to allow for styling
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
         //Detect and load images
         {
