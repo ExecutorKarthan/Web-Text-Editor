@@ -28,12 +28,9 @@ export default class {
       console.info('Loaded data from IndexedDB, injecting into editor');
       
       if (data.length > 0){
-        console.log("data", data)
         this.editor.setValue(data[data.length-1].jate);
       }
       else{
-        console.log("local data", localData)
-        console.log("header", header)
         this.editor.setValue(localData || header);
       }
     });
