@@ -1,31 +1,29 @@
+//Import needed libraries
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
-
+//Create an export module to configure PWA settings
 module.exports = () => {
   return {
+    //Define the mode and the where the entry points are
     mode: 'development',
     entry: {
       main: './src/js/index.js',
       install: './src/js/install.js'
     },
+    //Define the path and name of the PWA bundle
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      //Plugin to pack HTML in webpack
+      //Load the HTML into the webpack
       new HtmlWebpackPlugin({
       template: './index.html',
       title: 'Webpack Plugin',
       }),
-      
-      new MiniCssExtractPlugin(),
       
       //Plugin to route the service worker
       new InjectManifest({
@@ -34,13 +32,14 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-        // TODO: Create a manifest.json:
+        //Create a manifest file with approprate informational parameters
         name: 'PWA Web Text Editor',
         short_name: 'WTE',
         description: 'This is a Progressive Web App that functions as a text editor.',
         background_color: '#ffffff',
         start_url: './',
         publicPath: './',
+        //Generate icons of different sizes and provide the HTML a means to render
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -48,6 +47,7 @@ module.exports = () => {
             destination: path.join('assets', 'icons')
           },
         ],
+        //Disable the automatic file naming
         fingerprints: false
       }),
     ],
@@ -59,11 +59,11 @@ module.exports = () => {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
-        //Detect and load images
-        {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
-        },
+        //Detect and load images of 
+        // {
+        //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        //   type: 'asset/resource',
+        // },
         //Babel loader 
         {
           test: /\.m?js$/,

@@ -1,3 +1,4 @@
+//Create a graphic to display on the editor
 const header = `
 /*
        _____  ____________
