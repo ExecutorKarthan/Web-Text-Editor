@@ -36,7 +36,6 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 //Create a route that will check the cache first then query the server if needed
 registerRoute(
   ({ request }) => {
-    console.log(request);
     return (
       // CSS requests
       request.destination === 'style' ||

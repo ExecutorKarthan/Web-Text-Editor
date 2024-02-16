@@ -32,11 +32,14 @@ module.exports = () => {
       }),
 
       new WebpackPwaManifest({
-        //Create a manifest file with approprate informational parameters
-        name: 'PWA Web Text Editor',
-        short_name: 'WTE',
+        //Create a manifest file with appropriate informational parameters
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
         description: 'This is a Progressive Web App that functions as a text editor.',
-        background_color: '#ffffff',
+        theme_color: "#225ca3",
+        background_color: '#225ca3',
+        orientation: "portrait",
+        display: "standalone",
         start_url: './',
         publicPath: './',
         //Generate icons of different sizes and provide the HTML a means to render
@@ -58,23 +61,6 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
-        },
-        //Detect and load images of 
-        // {
-        //   test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        //   type: 'asset/resource',
-        // },
-        //Babel loader 
-        {
-          test: /\.m?js$/,
-          exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
-            },
-          },
         },
       ],
     },

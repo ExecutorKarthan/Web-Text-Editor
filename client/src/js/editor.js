@@ -26,14 +26,15 @@ export default class {
     // Fall back to localStorage if nothing is stored in indexeddb, and if neither is available, set the value to header.
     getDb().then((data) => {
       console.info('Loaded data from IndexedDB, injecting into editor');
-      //Format the data retrieved from the database
-      if (data.length > 0){
-        this.editor.setValue(data[data.length-1].jate);
-      }
-      //If there is no items in the database, check the local storage. If that is empty, user the header.
-      else{
-        this.editor.setValue(localData || header);
-      }
+      // //Format the data retrieved from the database
+      // if (data.length > 0){
+      //   this.editor.setValue(data[data.length-1].jate);
+      // }
+      // //If there is no items in the database, check the local storage. If that is empty, user the header.
+      // else{
+      //   this.editor.setValue(localData || header);
+      // }
+      this.editor.setValue(data.jata || localData || header)
     });
 
     this.editor.on('change', () => {
