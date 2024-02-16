@@ -19,26 +19,24 @@ This project is hosted on render [https://render.com/](https://render.com/), so 
 ## Usage
 Once the user opens the app, they can begin to type in the text editor box. The text entered will persist, even if the app is closed, unless the user clears their cache. The user has the option to install the app via the install button. Once the button is clicked, a few prompts will guide the user through its installation. Installing the app allows data to persist and is continued between the offline and online states. 
 
-The following GIFs show this programs capabilities.
-1) User Routes Demo <br>
-![User Routes Demo Gif](./assets/users.gif)
-2) Friends Routes Demo <br>
-![Friends Routes Demo Gif](./assets/friends.gif)
-3) Thoughts Routes Demo<br>
-![Thoughts Routes Demo Gif](./assets/thoughts.gif) 
-4) Reactions Routes Demo<br>
-![Reactions Routes Demo Gif](./assets/reactions.gif)
+The following GIF show this programs capabilities
+1) Basic Functionality <br>
+![Basic Functionality Demo Gif](./assets/Basic-Functionality.gif)
+2) Behind the Browser <br>
+![Behind the Browser Demo Gif](./assets/Behind-the-browser.gif)
+3) Installability <br>
+![Installability Demo Gif](./assets/Installability.gif) 
 <br>
-A video walkthrough of the app's functionality can be found <a href="./assets/E-commerce-backend.mp4"> here</a>.
+A video walkthrough of the app's functionality can be found <a href="./assets/Web-Editor-Demo.mp4"> here</a>.
 
 ## License
 This product is protected by a [MIT License](http://choosealicense.com/licenses/mit).
 
 ## Contributing
-I, Alex Messina, authored the majority of this code. Its layout and design was inspired by education resources. 
+The base code for this project was taken from [https://github.com/coding-boot-camp/cautious-meme](https://github.com/coding-boot-camp/cautious-meme). I, Alex Messina, edited the code to function. I had to edit the webpack configuration file, as well as a few other files to get the app to appear and function as intended. 
 
 ## Tests
-No tests were prepared for this project. Error codes will be displayed by the HTML of the PWA
+No tests were prepared for this project. Errors can be noted in its behavior and display.
 
 ## Questions
 My GitHub username is [ExecutorKarthan](https://github.com/ExecutorKarthan) and this project can be found at [https://github.com/ExecutorKarthan/Web-Text-Editor](https://github.com/ExecutorKarthan/Web-Text-Editor)
